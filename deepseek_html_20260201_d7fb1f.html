@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryzon Network - رتب ديسكورد</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --cryzon-blue: #0a8ea0;
+            --cryzon-dark: #1a2b3c;
+            --cryzon-light: #e6f7ff;
+            --vip-color: #ffd700;
+            --legendary-color: #9b30ff;
+            --special-color: #00bfff;
+            --dark-bg: #0d1b2a;
+            --card-bg: #1b263b;
+            --text-color: #f1f1f1;
+            --accent-color: #415a77;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 50px;
+            background-image: linear-gradient(to bottom, var(--dark-bg), #0a1520);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--cryzon-dark), var(--cryzon-blue));
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--cryzon-blue);
+            box-shadow: 0 4px 15px rgba(10, 142, 160, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%230a8ea0' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--cryzon-blue);
+            margin-left: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--cryzon-blue);
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #4cc9f0, var(--cryzon-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--cryzon-light);
+        }
+        
+        .discord-icon {
+            color: #5865F2;
+            margin-right: 10px;
+        }
+        
+        .ranks-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-top: 50px;
+            color: var(--cryzon-blue);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--cryzon-blue), transparent);
+        }
+        
+        .rank-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            width: 320px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid;
+            border-bottom: 3px solid rgba(10, 142, 160, 0.3);
+        }
+        
+        .rank-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(10, 142, 160, 0.2);
+        }
+        
+        .vip-card {
+            border-top-color: var(--vip-color);
+        }
+        
+        .legendary-card {
+            border-top-color: var(--legendary-color);
+        }
+        
+        .special-card {
+            border-top-color: var(--special-color);
+        }
+        
+        .rank-header {
+            padding: 25px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .rank-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .vip-header {
+            background: linear-gradient(135deg, #ffd700, #ffaa00);
+        }
+        
+        .legendary-header {
+            background: linear-gradient(135deg, #9b30ff, #6a0dad);
+        }
+        
+        .special-header {
+            background: linear-gradient(135deg, #00bfff, #0080ff);
+        }
+        
+        .rank-icon {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+        }
+        
+        .rank-title {
+            font-size: 1.9rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .rank-description {
+            font-size: 1rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .rank-details {
+            padding: 25px;
+        }
+        
+        .price {
+            font-size: 2.7rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .vip-price {
+            color: var(--vip-color);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        .legendary-price {
+            color: var(--legendary-color);
+            text-shadow: 0 0 10px rgba(155, 48, 255, 0.3);
+        }
+        
+        .special-price {
+            color: var(--special-color);
+            text-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+        }
+        
+        .features {
+            list-style-type: none;
+            margin-bottom: 30px;
+        }
+        
+        .features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+        }
+        
+        .features li:last-child {
+            border-bottom: none;
+        }
+        
+        .features i {
+            margin-left: 12px;
+            font-size: 1.2rem;
+        }
+        
+        .vip-feature i {
+            color: var(--vip-color);
+        }
+        
+        .legendary-feature i {
+            color: var(--legendary-color);
+        }
+        
+        .special-feature i {
+            color: var(--special-color);
+        }
+        
+        .buy-btn {
+            display: block;
+            width: 100%;
+            padding: 17px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .buy-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s;
+            z-index: -1;
+        }
+        
+        .buy-btn:hover::before {
+            left: 100%;
+        }
+        
+        .vip-btn {
+            background: linear-gradient(to right, #ffd700, #ffaa00);
+            color: #333;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .legendary-btn {
+            background: linear-gradient(to right, #9b30ff, #6a0dad);
+            color: white;
+            box-shadow: 0 5px 15px rgba(155, 48, 255, 0.3);
+        }
+        
+        .special-btn {
+            background: linear-gradient(to right, #00bfff, #0080ff);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 191, 255, 0.3);
+        }
+        
+        .buy-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(10, 142, 160, 0.3);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+        
+        .cryzon-footer {
+            color: var(--cryzon-blue);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .instructions {
+            background-color: rgba(10, 142, 160, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid rgba(10, 142, 160, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .instructions h2 {
+            color: var(--cryzon-blue);
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        
+        .instructions ol {
+            padding-right: 25px;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+        
+        .instructions li {
+            margin-bottom: 12px;
+            padding-right: 10px;
+        }
+        
+        .note {
+            background: rgba(255, 215, 0, 0.1);
+            border-right: 4px solid var(--vip-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .discord-link {
+            display: inline-block;
+            background-color: #5865F2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .discord-link:hover {
+            background-color: #4752c4;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(88, 101, 242, 0.3);
+        }
+        
+        @media (max-width: 1100px) {
+            .ranks-container {
+                gap: 25px;
+            }
+            
+            .rank-card {
+                width: 310px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .ranks-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .rank-card {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-icon {
+                margin-left: 0;
+                margin-bottom: 15px;
+            }
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            left: -30px;
+            background: var(--cryzon-blue);
+            color: white;
+            padding: 8px 30px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transform: rotate(-45deg);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+        
+        .legendary-card {
+            position: relative;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <h1>Cryzon Network</h1>
+            </div>
+            <p class="tagline"><i class="fab fa-discord discord-icon"></i>متجر الرتب المميزة لسيرفرات ديسكورد - ارتقِ بخادمك إلى مستوى جديد</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h2 class="section-title">رتب ديسكورد المتاحة</h2>
+        
+        <div class="ranks-container">
+            <!-- رتبة VIP -->
+            <div class="rank-card vip-card">
+                <div class="rank-header vip-header">
+                    <div class="rank-icon">👑</div>
+                    <h2 class="rank-title">رتبة VIP</h2>
+                    <p class="rank-description">المستوى المميز للاعضاء النشطين</p>
+                </div>
+                
+                <div class="rank-details">
+                    <div class="price vip-price">$2.99</div>
+                    
+                    <ul class="features">
+                        <li class="vip-feature"><i class="fas fa-check-circle"></i> لون اسم مميز في الدردشة</li>
+                        <li class="vip-feature"><i class="fas fa-check-circle"></i> إمكانية استخدام إيموجيات مخصصة</li>
+                        <li class="vip-feature"><i class="fas fa-check-circle"></i> الوصول إلى قنوات VIP الخاصة</li>
+                        <li class="vip-feature"><i class="fas fa-check-circle"></i> أولوية في الدعم الفني</li>
+                        <li class="vip-feature"><i class="fas fa-check-circle"></i> رتبة في سيرفر الديسكورد</li>
+                    </ul>
+                    
+                    <a href="#" class="buy-btn vip-btn" onclick="buyRank('VIP', 2.99)">
+                        <i class="fas fa-shopping-cart"></i> شراء الرتبة
+                    </a>
+                </div>
+            </div>
+            
+            <!-- رتبة Legendary -->
+            <div class="rank-card legendary-card">
+                <div class="popular-badge">الأكثر شعبية</div>
+                <div class="rank-header legendary-header">
+                    <div class="rank-icon">⚡</div>
+                    <h2 class="rank-title">رتبة Legendary</h2>
+                    <p class="rank-description">للأعضاء المميزين والمساهمين في الخادم</p>
+                </div>
+                
+                <div class="rank-details">
+                    <div class="price legendary-price">$4.99</div>
+                    
+                    <ul class="features">
+                        <li class="legendary-feature"><i class="fas fa-check-circle"></i> كل ميزات رتبة VIP</li>
+                        <li class="legendary-feature"><i class="fas fa-check-circle"></i> شارة خاصة بجانب الاسم</li>
+                        <li class="legendary-feature"><i class="fas fa-check-circle"></i> إمكانية نقل المستخدمين في الروم الصوتي</li>
+                        <li class="legendary-feature"><i class="fas fa-check-circle"></i> إنشاء دعوات خاصة غير منتهية</li>
+                        <li class="legendary-feature"><i class="fas fa-check-circle"></i> إمكانية تثبيت الرسائل في القنوات</li>
+                    </ul>
+                    
+                    <a href="#" class="buy-btn legendary-btn" onclick="buyRank('Legendary', 4.99)">
+                        <i class="fas fa-shopping-cart"></i> شراء الرتبة
+                    </a>
+                </div>
+            </div>
+            
+            <!-- رتبة Special -->
+            <div class="rank-card special-card">
+                <div class="rank-header special-header">
+                    <div class="rank-icon">✨</div>
+                    <h2 class="rank-title">رتبة Special</h2>
+                    <p class="rank-description">أعلى رتبة مع جميع الميزات الحصرية</p>
+                </div>
+                
+                <div class="rank-details">
+                    <div class="price special-price">$6.99</div>
+                    
+                    <ul class="features">
+                        <li class="special-feature"><i class="fas fa-check-circle"></i> كل ميزات رتبة Legendary</li>
+                        <li class="special-feature"><i class="fas fa-check-circle"></i> لون خلفية مخصص في ملفك الشخصي</li>
+                        <li class="special-feature"><i class="fas fa-check-circle"></i> إمكانية تغيير اللقب (Nickname) لأعضاء آخرين</li>
+                        <li class="special-feature"><i class="fas fa-check-circle"></i> دور استشاري في الخادم</li>
+                        <li class="special-feature"><i class="fas fa-check-circle"></i> إشعار خاص عند دخولك للخادم</li>
+                    </ul>
+                    
+                    <a href="#" class="buy-btn special-btn" onclick="buyRank('Special', 6.99)">
+                        <i class="fas fa-shopping-cart"></i> شراء الرتبة
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h2><i class="fas fa-info-circle"></i> طريقة الشراء في Cryzon Network</h2>
+            <ol>
+                <li>اختر الرتبة المناسبة لك من الخيارات أعلاه (نوصي بـ Legendary للأفضلية)</li>
+                <li>اضغط على زر "شراء الرتبة" للرتبة المختارة</li>
+                <li>سوف يتم توجيهك إلى صفحة الدفع الآمنة</li>
+                <li>بعد اكتمال الدفع، قم بالانضمام إلى سيرفر الدعم الخاص بنا</li>
+                <li>سيتواصل معك فريق الدعم خلال 24 ساعة لإضافة الرتبة إلى حسابك</li>
+            </ol>
+            
+            <div class="note">
+                <p><strong><i class="fas fa-exclamation-circle"></i> ملاحظة هامة:</strong> جميع الأسعار بالدولار الأمريكي. الرتبة تمنح لمستخدم واحد فقط في خادم ديسكورد محدد. يمكنك شراء أكثر من رتبة لنفس الخادم.</p>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="#" class="discord-link" onclick="joinDiscord()">
+                    <i class="fab fa-discord"></i> انضم إلى سيرفر الدعم
+                </a>
+            </div>
+        </div>
+        
+        <footer>
+            <p class="cryzon-footer">Cryzon Network</p>
+            <p>© 2023 Cryzon Network. جميع الحقوق محفوظة.</p>
+            <p>هذا الموقع ليس مرتبطًا رسميًا بـ Discord Inc.</p>
+            <p>للأسئلة والدعم: <a href="mailto:support@cryzon-network.com" style="color: var(--cryzon-blue);">support@cryzon-network.com</a></p>
+        </footer>
+    </div>
+    
+    <script>
+        function buyRank(rankName, price) {
+            // في تطبيق حقيقي، هنا سيكون التوجيه لصفحة الدفع
+            // لكننا سنعرض رسالة توضيحية في هذا المثال
+            const message = `شكرًا لاختيارك رتبة ${rankName} من Cryzon Network بقيمة $${price}! \n\nفي التطبيق الحقيقي، ستتم إعادة توجيهك إلى صفحة الدفع الآمن.`;
+            
+            // إنشاء نافذة تأكيد مخصصة
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: var(--card-bg); padding: 30px; border-radius: 15px; max-width: 500px; text-align: center; border-top: 5px solid var(--cryzon-blue);">
+                    <h2 style="color: var(--cryzon-blue); margin-bottom: 20px;">تأكيد الشراء</h2>
+                    <p style="margin-bottom: 25px; font-size: 1.1rem;">${message}</p>
+                    <div>
+                        <button onclick="this.parentElement.parentElement.parentElement.remove()" style="background: var(--cryzon-blue); color: white; border: none; padding: 12px 25px; border-radius: 8px; font-size: 1rem; cursor: pointer; margin: 0 10px;">حسنًا</button>
+                        <button onclick="window.location.href='https://payment.cryzon-network.com/?rank=${rankName}&price=${price}'" style="background: #4CAF50; color: white; border: none; padding: 12px 25px; border-radius: 8px; font-size: 1rem; cursor: pointer; margin: 0 10px;">متابعة للدفع</button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // تسجيل العملية في الكونسول (لأغراض التطوير)
+            console.log(`Cryzon Network - عملية شراء رتبة: ${rankName} - السعر: $${price}`);
+        }
+        
+        function joinDiscord() {
+            alert("انضم إلى سيرفر الدعم الخاص بنا: https://discord.gg/cryzon-network");
+            // في التطبيق الحقيقي: window.open('https://discord.gg/cryzon-network', '_blank');
+        }
+        
+        // تأثيرات إضافية عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            // إضافة تأثير ظهور تدريجي للبطاقات
+            const cards = document.querySelectorAll('.rank-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 300 * (index + 1));
+            });
+            
+            // إضافة تأثير النبض للزر الأكثر شعبية
+            const popularBtn = document.querySelector('.legendary-btn');
+            setInterval(() => {
+                popularBtn.style.boxShadow = '0 0 20px rgba(155, 48, 255, 0.5)';
+                setTimeout(() => {
+                    popularBtn.style.boxShadow = '0 5px 15px rgba(155, 48, 255, 0.3)';
+                }, 800);
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
